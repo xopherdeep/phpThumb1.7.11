@@ -194,6 +194,11 @@ if (empty($phpThumb->config_disable_pathinfo_parsing) && (empty($_GET) || isset(
 
 if (!empty($phpThumb->config_high_security_enabled)) {
 	if (empty($_GET['hash'])) {
+		// @xopherdeep : Rather Then Crashing... Why not have it just forward itself to the correct url?
+		$uri = parse_url($_SERVER['REQUEST_URI']);
+		header("Location: " . phpThumbUrl($uri['query'],$uri['path']) );
+		// x
+
 		$phpThumb->config_disable_debug = false; // otherwise error message won't print
 		$phpThumb->ErrorImage('ERROR: missing hash');
 	} elseif (PasswordStrength($phpThumb->config_high_security_password) < 20) {
