@@ -1,7 +1,7 @@
 phpThumbCacheIMcommandlineBase.txt
 phpThumbCacheIMversion.txt
 phpThumbCacheStats.txt
-phpThumb.config.php
+#phpThumb.config.php
 cache/*
 *.bmp
 *.eps
