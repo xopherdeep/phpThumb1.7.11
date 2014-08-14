@@ -81,11 +81,11 @@ $PHPTHUMB_CONFIG['cache_maxage'] = 86400 * 30;        // delete cached thumbnail
 $PHPTHUMB_CONFIG['cache_maxsize'] = 10 * 1024 * 1024; // delete least-recently-accessed cached thumbnails when more than [10MB] of cached files are present (value is maximum bytesize of all cached files). Note: this only counts file size, does not count space "wasted" by directory entries in the cache structure -- see notes under $PHPTHUMB_CONFIG['cache_directory_depth']
 
 //$PHPTHUMB_CONFIG['cache_maxfiles'] = null;          // never delete cached thumbnails based on number of cached files
-$PHPTHUMB_CONFIG['cache_maxfiles'] = 200;             // delete least-recently-accessed cached thumbnails when more than [200] cached files are present (value is maximum number of cached files to keep)
+$PHPTHUMB_CONFIG['cache_maxfiles'] = 2000;             // delete least-recently-accessed cached thumbnails when more than [200] cached files are present (value is maximum number of cached files to keep)
 
 
 // * Source image cache configuration
-$PHPTHUMB_CONFIG['cache_source_enabled']   = false;                               // if true, source images obtained via HTTP are cached to $PHPTHUMB_CONFIG['cache_source_directory']
+$PHPTHUMB_CONFIG['cache_source_enabled']   = true;                               // if true, source images obtained via HTTP are cached to $PHPTHUMB_CONFIG['cache_source_directory']
 $PHPTHUMB_CONFIG['cache_source_directory'] = dirname(__FILE__).'/cache/source/';  // set the cache directory for unprocessed source images
 
 // * cache source modification date configuration
@@ -162,9 +162,9 @@ $PHPTHUMB_CONFIG['output_interlace'] = true;   // if true: interlaced output for
 $PHPTHUMB_CONFIG['error_image_width']           = 400;      // default width for error images
 $PHPTHUMB_CONFIG['error_image_height']          = 100;      // default height for error images
 $PHPTHUMB_CONFIG['error_message_image_default'] = '';       // Set this to the name of a generic error image (e.g. '/images/error.png') that you want displayed in place of any error message that may occur. This setting is overridden by the 'err' parameter, which does the same thing.
-$PHPTHUMB_CONFIG['error_bgcolor']               = 'CCCCFF'; // background color of error message images
-$PHPTHUMB_CONFIG['error_textcolor']             = 'FF0000'; // color of text in error messages
-$PHPTHUMB_CONFIG['error_fontsize']              = 1;        // size of text in error messages, from 1 (smallest) to 5 (largest)
+$PHPTHUMB_CONFIG['error_bgcolor']               = '222222'; // background color of error message images
+$PHPTHUMB_CONFIG['error_textcolor']             = 'EE0000'; // color of text in error messages
+$PHPTHUMB_CONFIG['error_fontsize']              = 2;        // size of text in error messages, from 1 (smallest) to 5 (largest)
 $PHPTHUMB_CONFIG['error_die_on_error']          = true;     // die with error message on any fatal error (recommended with standalone phpThumb.php)
 $PHPTHUMB_CONFIG['error_silent_die_on_error']   = false;    // simply die with no output of any kind on fatal errors (not recommended)
 $PHPTHUMB_CONFIG['error_die_on_source_failure'] = true;     // die with error message if source image cannot be processed by phpThumb() (usually because source image is corrupt in some way). If false the source image will be passed through unprocessed, if true (default) an error message will be displayed.
